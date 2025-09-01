@@ -1,22 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-burgundy mb-6">
-            Visit Us
-          </h2>
-          <p className="text-lg text-warm-gray max-w-2xl mx-auto">
-            Experience exceptional dining in the heart of the city. 
-            We look forward to welcoming you to Bella Vista.
-          </p>
-        </div>
+        <AnimatedSection animation="fade-in-up">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-burgundy mb-6">
+              Visit Us
+            </h2>
+            <p className="text-lg text-warm-gray max-w-2xl mx-auto">
+              Experience exceptional dining in the heart of the city. 
+              We look forward to welcoming you to Bella Vista.
+            </p>
+          </div>
+        </AnimatedSection>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <Card className="shadow-soft border-0">
+          <AnimatedSection animation="slide-in-left" delay={200}>
+            <Card className="shadow-soft border-0">
             <CardContent className="p-8">
               <h3 className="text-2xl font-serif font-semibold text-burgundy mb-6">
                 Contact Information
@@ -53,8 +58,10 @@ const Contact = () => {
               </div>
             </CardContent>
           </Card>
+          </AnimatedSection>
 
-          <Card className="shadow-soft border-0">
+          <AnimatedSection animation="slide-in-right" delay={400}>
+            <Card className="shadow-soft border-0">
             <CardContent className="p-8">
               <h3 className="text-2xl font-serif font-semibold text-burgundy mb-6">
                 Make a Reservation
@@ -67,9 +74,11 @@ const Contact = () => {
                 </p>
                 
                 <div className="space-y-4">
-                  <Button variant="reserve" className="w-full">
-                    Book Online
-                  </Button>
+                  <Link to="/reservations">
+                    <Button variant="reserve" className="w-full">
+                      Book Online
+                    </Button>
+                  </Link>
                   <Button variant="outline" className="w-full">
                     Call to Reserve
                   </Button>
@@ -85,6 +94,7 @@ const Contact = () => {
               </div>
             </CardContent>
           </Card>
+          </AnimatedSection>
         </div>
       </div>
     </section>

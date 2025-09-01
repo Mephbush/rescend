@@ -1,13 +1,19 @@
+import AnimatedSection from "@/components/AnimatedSection";
+
 const About = () => {
   return (
     <section id="about" className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-burgundy mb-8">
-            Our Story
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center mt-16">
+        <AnimatedSection animation="fade-in-up">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-burgundy mb-8">
+              Our Story
+            </h2>
+          </div>
+        </AnimatedSection>
+        
+        <AnimatedSection animation="slide-in-left" delay={200}>
+          <div className="grid md:grid-cols-2 gap-12 items-center mt-16 max-w-4xl mx-auto">
             <div className="text-left space-y-6">
               <p className="text-lg text-warm-gray leading-relaxed">
                 Founded in 2010, Bella Vista has been a cornerstone of fine dining, 
@@ -50,7 +56,7 @@ const About = () => {
               </ul>
             </div>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );

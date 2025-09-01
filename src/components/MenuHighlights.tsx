@@ -1,4 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
+import AnimatedSection from "@/components/AnimatedSection";
 import beefDish from "@/assets/dish-beef.jpg";
 import salmonDish from "@/assets/dish-salmon.jpg";
 import chocolateDessert from "@/assets/dessert-chocolate.jpg";
@@ -31,18 +33,21 @@ const MenuHighlights = () => {
   return (
     <section id="menu" className="py-20 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-burgundy mb-6">
-            Signature Dishes
-          </h2>
-          <p className="text-lg text-warm-gray max-w-2xl mx-auto">
-            Experience our chef's most celebrated creations, each dish a perfect harmony 
-            of flavors and artful presentation.
-          </p>
-        </div>
+        <AnimatedSection animation="fade-in-up">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-burgundy mb-6">
+              Signature Dishes
+            </h2>
+            <p className="text-lg text-warm-gray max-w-2xl mx-auto">
+              Experience our chef's most celebrated creations, each dish a perfect harmony 
+              of flavors and artful presentation.
+            </p>
+          </div>
+        </AnimatedSection>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {dishes.map((dish, index) => (
+            <AnimatedSection key={index} animation="scale-in" delay={index * 150}>
             <Card key={index} className="group overflow-hidden shadow-soft hover:shadow-warm transition-spring border-0">
               <div className="relative h-64 overflow-hidden">
                 <img 
@@ -71,17 +76,20 @@ const MenuHighlights = () => {
                 </p>
               </CardContent>
             </Card>
+            </AnimatedSection>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-warm-gray mb-6">
-            Discover our complete menu featuring seasonal specialties and wine pairings
-          </p>
-          <button className="text-burgundy font-semibold hover:text-amber transition-smooth underline decoration-2 underline-offset-4">
-            View Full Menu →
-          </button>
-        </div>
+        <AnimatedSection animation="fade-in" delay={600}>
+          <div className="text-center mt-12">
+            <p className="text-warm-gray mb-6">
+              Discover our complete menu featuring seasonal specialties and wine pairings
+            </p>
+            <Link to="/menu" className="text-burgundy font-semibold hover:text-amber transition-smooth underline decoration-2 underline-offset-4">
+              View Full Menu →
+            </Link>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );
