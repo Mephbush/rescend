@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import AnimatedSection from "@/components/AnimatedSection";
+import ContactForm from "@/components/ContactForm";
 
 const Contact = () => {
   return (
@@ -61,39 +62,7 @@ const Contact = () => {
           </AnimatedSection>
 
           <AnimatedSection animation="slide-in-right" delay={400}>
-            <Card className="shadow-soft border-0">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-serif font-semibold text-burgundy mb-6">
-                Make a Reservation
-              </h3>
-              
-              <div className="space-y-4">
-                <p className="text-warm-gray mb-6">
-                  Reserve your table for an unforgettable dining experience. 
-                  We recommend booking in advance, especially for weekend evenings.
-                </p>
-                
-                <div className="space-y-4">
-                  <Link to="/reservations">
-                    <Button variant="reserve" className="w-full">
-                      Book Online
-                    </Button>
-                  </Link>
-                  <Button variant="outline" className="w-full">
-                    Call to Reserve
-                  </Button>
-                </div>
-                
-                <div className="mt-8 p-4 bg-amber/10 rounded-lg">
-                  <h4 className="font-semibold text-burgundy mb-2">Special Events</h4>
-                  <p className="text-sm text-warm-gray">
-                    Private dining rooms available for special occasions, 
-                    corporate events, and celebrations. Contact us for details.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+            <ContactForm />
           </AnimatedSection>
         </div>
       </div>
