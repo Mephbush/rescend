@@ -3,14 +3,9 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import ReservationForm from "@/components/ReservationForm";
 
 const Reservations = () => {
-  const timeSlots = [
-    "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", 
-    "7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM", "9:00 PM"
-  ];
-
-  const partySize = [1, 2, 3, 4, 5, 6, 7, 8];
 
   return (
     <div className="min-h-screen">
@@ -39,117 +34,7 @@ const Reservations = () => {
                 
                 {/* Reservation Form */}
                 <AnimatedSection animation="slide-in-left">
-                  <Card className="shadow-elegant border-0">
-                    <CardContent className="p-8">
-                      <h2 className="text-3xl font-serif font-bold text-burgundy mb-6">
-                        Book Your Table
-                      </h2>
-                      
-                      <form className="space-y-6">
-                        <div className="grid md:grid-cols-2 gap-4">
-                          <div>
-                            <label className="block text-sm font-medium text-foreground mb-2">
-                              First Name
-                            </label>
-                            <input 
-                              type="text" 
-                              className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-amber/50 focus:border-amber transition-smooth"
-                              placeholder="Enter your first name"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-sm font-medium text-foreground mb-2">
-                              Last Name
-                            </label>
-                            <input 
-                              type="text" 
-                              className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-amber/50 focus:border-amber transition-smooth"
-                              placeholder="Enter your last name"
-                            />
-                          </div>
-                        </div>
-
-                        <div>
-                          <label className="block text-sm font-medium text-foreground mb-2">
-                            Email Address
-                          </label>
-                          <input 
-                            type="email" 
-                            className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-amber/50 focus:border-amber transition-smooth"
-                            placeholder="Enter your email"
-                          />
-                        </div>
-
-                        <div>
-                          <label className="block text-sm font-medium text-foreground mb-2">
-                            Phone Number
-                          </label>
-                          <input 
-                            type="tel" 
-                            className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-amber/50 focus:border-amber transition-smooth"
-                            placeholder="Enter your phone number"
-                          />
-                        </div>
-
-                        <div className="grid md:grid-cols-2 gap-4">
-                          <div>
-                            <label className="block text-sm font-medium text-foreground mb-2">
-                              Date
-                            </label>
-                            <input 
-                              type="date" 
-                              className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-amber/50 focus:border-amber transition-smooth"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-sm font-medium text-foreground mb-2">
-                              Party Size
-                            </label>
-                            <select className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-amber/50 focus:border-amber transition-smooth">
-                              <option value="">Select party size</option>
-                              {partySize.map(size => (
-                                <option key={size} value={size}>
-                                  {size} {size === 1 ? 'Guest' : 'Guests'}
-                                </option>
-                              ))}
-                            </select>
-                          </div>
-                        </div>
-
-                        <div>
-                          <label className="block text-sm font-medium text-foreground mb-2">
-                            Preferred Time
-                          </label>
-                          <div className="grid grid-cols-3 gap-2">
-                            {timeSlots.map(time => (
-                              <button
-                                key={time}
-                                type="button"
-                                className="px-3 py-2 text-sm border border-border rounded-md hover:bg-amber hover:text-foreground hover:border-amber transition-smooth"
-                              >
-                                {time}
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div>
-                          <label className="block text-sm font-medium text-foreground mb-2">
-                            Special Requests
-                          </label>
-                          <textarea 
-                            rows={4}
-                            className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-amber/50 focus:border-amber transition-smooth"
-                            placeholder="Any special occasions, dietary restrictions, or preferences..."
-                          />
-                        </div>
-
-                        <Button variant="reserve" className="w-full text-lg">
-                          Reserve Table
-                        </Button>
-                      </form>
-                    </CardContent>
-                  </Card>
+                  <ReservationForm />
                 </AnimatedSection>
 
                 {/* Information */}
